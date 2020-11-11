@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.render('Home');
 });
 
-app.get('/Beers', (req, res, next) => {
+app.get('/Beers', (req, res) => {
   punkAPI.getBeers().then(beersFromApi => {
     // Prepare the object to be passed/injected to `Beers` view
     const data = { beersFromApi: beersFromApi };
@@ -29,10 +29,10 @@ app.get('/Beers', (req, res, next) => {
   });
 });
 
-app.get('/RandomBeer', (req, res, next) => {
-  punkAPI.getRandom().then(beersFromApi => {
+app.get('/RandomBeer', (req, res) => {
+  punkAPI.getRandom().then(oneBeer => {
     // Prepare the object to be passed/injected to `Beers` view
-    const data = { beersFromApi: beersFromApi };
+    const data = { oneBeer: oneBeer };
     console.log(data);
 
     // Render the `Beers` view and pass/inject to it the object containing the `beersFromApi`

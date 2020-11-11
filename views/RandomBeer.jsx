@@ -1,27 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
+const BeerCard = require('./components/BeerCard.jsx');
 
 function RandomBeer(props) {
-  return (
-    <Layout>
-      {
-        <div>
-          {props.beersFromApi.map((beerObj, i) => {
-            return (
-              <div>
-                <img key = {i} src={beerObj.image_url} width="200" alt="" />
-                <h3>{beerObj.name}</h3>
-                <h5>{beerObj.tagline}</h5>
-                <p>{beerObj.description}</p>
-                <p>{beerObj.brewers_tips}</p>
-                <p>{beerObj.food_pairings}</p>
-              </div>
-            );
-          })}
-        </div>
-      }
-    </Layout>
-  );
+  return <Layout>{<BeerCard beer={props.oneBeer[0]} />}</Layout>;
 }
 
 module.exports = RandomBeer;

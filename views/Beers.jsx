@@ -1,5 +1,6 @@
 const React = require('react');
 const Layout = require('./Layout');
+const BeerCard = require('./components/BeerCard.jsx');
 
 function Beers(props) {
   return (
@@ -8,12 +9,7 @@ function Beers(props) {
         <div>
           {props.beersFromApi.map((beerObj, i) => {
             return (
-              <div>
-                <img key={i} src={beerObj.image_url} width="200" alt="" />
-                <h3>{beerObj.name}</h3>
-                <h5>{beerObj.tagline}</h5>
-                <p>{beerObj.description}</p>
-              </div>
+              <BeerCard beer = {beerObj} />
             );
           })}
         </div>
