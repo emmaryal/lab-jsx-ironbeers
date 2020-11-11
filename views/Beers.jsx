@@ -6,7 +6,7 @@ function Beers(props) {
   return (
     <Layout>
       {
-        <div>
+        <div className="display-container">
           {props.beersFromApi.map((beerObj, i) => {
             return (
               <BeerCard beer = {beerObj} />

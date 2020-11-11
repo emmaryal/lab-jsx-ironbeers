@@ -1,7 +1,25 @@
-/*
-white: #f7f9f9;
-light-blue: #2081c3;
-dark-blue: #0a2c42;
-grey: #bfbfbf;
-font-family: Arial, Helvetica, sans-serif;
-*/
+:root {
+  --white: #f7f9f9;
+  --light-blue: #2081c3;
+  --dark-blue: #0a2c42;
+  --grey: #bfbfbf;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.beerContainer {
+  background-color: --light-blue;
+  border-radius: 5px;
+  border-color: --darkblue;
+  width: 30%;
+}
+
+.displayContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+ 
+    
+}
