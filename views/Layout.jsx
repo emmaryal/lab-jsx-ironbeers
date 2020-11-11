@@ -13,7 +13,7 @@ function Layout(props) {
         <nav>
           <a href="/"> Home </a>
           <a href="/beers"> Beers </a>
-          <a href="/random-beer"> Random Beer </a>
+          <a href="/RandomBeer">Random Beer </a>
         </nav>
         {/* This is the only page that will have full html setup */}
 
@@ -22,7 +22,9 @@ function Layout(props) {
         	to enable showing other components/views 
         	withing the Layout
         */}
-
+        
+        { props.children }
+      
       </body>
     </html>
   );

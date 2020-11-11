@@ -19,7 +19,28 @@ app.get('/', (req, res) => {
   res.render('Home');
 });
 
+app.get('/Beers', (req, res, next) => {
+  punkAPI.getBeers().then(beersFromApi => {
+    // Prepare the object to be passed/injected to `Beers` view
+    const data = { beersFromApi: beersFromApi };
+
+    // Render the `Beers` view and pass/inject to it the object containing the `beersFromApi`
+    res.render('Beers', data);
+  });
+});
+
+app.get('/RandomBeer', (req, res, next) => {
+  punkAPI.getRandom().then(beersFromApi => {
+    // Prepare the object to be passed/injected to `Beers` view
+    const data = { beersFromApi: beersFromApi };
+    console.log(data);
+
+    // Render the `Beers` view and pass/inject to it the object containing the `beersFromApi`
+    res.render('RandomBeer', data);
+  });
+});
+/*.catch(error => console.log(error));*/
 
 app.listen(3000, () => {
-  console.log('🏃‍ on port 3000')
+  console.log('🏃‍ on port 3000');
 });
